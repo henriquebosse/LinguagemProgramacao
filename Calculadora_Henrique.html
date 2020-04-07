@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+            background-color: cadetblue;
+            color: white;
+            font: 12pt Arial;
+        }
+       
+    </style>    
+</head>
+    <body>    
+        
+        <fieldset>
+            <legend>Calculadora</legend>
+                                
+            <div>
+                <label for="primeiroNum">Insira o Primeiro Valor:</label> 
+                <input id="primeiroNum" type="number" required="" placeholder="Digite o Primeiro Valor" name="primeiroNum"/> 
+            </div>
+            <div> 
+                <label for="segundoNum">Insira o Segundo Valor:</label> 
+                <input id="segundoNum" type="number" name="segundoNum" required="" placeholder="Digite o Segundo Valor">
+            </div>                    
+            </br>
+            <div>
+                <button onclick="CalcularValores('somar')">Somar (+)</button>
+                <button onclick="CalcularValores('subtrair')">Subtrair (-)</button>
+                <button onclick="CalcularValores('multiplicar')">Multiplicar (x)</button>
+                <button onclick="CalcularValores('dividir')">Dividir (/)</button>
+                <button onclick="CalcularValores('porcentagem')">Porcentagem (%)</button>
+            </div>                   
+            </br>
+            <div> 
+                <label for="resultado">Resultado:</label> <input id="resultado" type="number" name="resultado">
+            </div>                    
+        </fieldset>
+     
+        <script>
+            function CalcularValores(operacao) {
+                var primNum = +document.getElementById("primeiroNum").value;
+                var segNum = +document.getElementById("segundoNum").value;
+                var resultado = document.getElementById("resultado");
+
+                switch(operacao) {
+                case 'somar':                    
+                    resultado.value = primNum + segNum;
+                    break; 
+                case 'subtrair':
+                    resultado.value = primNum - segNum;
+                    break;
+                case 'multiplicar':
+                    resultado.value = primNum * segNum;
+                break;
+                case 'dividir':
+                    resultado.value = primNum / segNum;
+                break;
+                case 'porcentagem':
+                    resultado.value = primNum * (segNum / 100);
+                break;
+                default:
+                    // code block
+                }
+            }
+       
+        </script>
+
+    </body>
+</html>    
