@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Calculadora</title>    
+</head>
+    <body>    
+        
+        <fieldset>
+            <legend>Calculadora</legend>
+                                
+            <div>
+                <label for="primeiroNum">Insira o Primeiro Valor:</label> <input id="primeiroNum" type="number" required="" placeholder="Somente Números" name="primeiroNum"/> 
+            </div>
+            <div> 
+                <label for="segundoNum">Insira o Segundo Valor:</label> <input id="segundoNum" type="number" name="segundoNum" required="" placeholder="Somente Números">
+            </div>                    
+            </br>
+            <div>
+                <button onclick="somarValores()">Somar (+)</button>
+                <button onclick="subtrairValores()">Subtrair (-)</button>
+                <button onclick="multiplicarValores()">Multiplicar (x)</button>
+                <button onclick="dividirValores()">Dividir (/)</button>
+            </div>                   
+            </br>
+            <div> <label for="resultado">Resultado:</label> <input id="resultado" type="number" name="resultado"></div>                    
+        </fieldset>
+     
+        <script>
+            function somarValores() { 
+                var primNum = +document.getElementById("primeiroNum").value;
+                var segNum = +document.getElementById("segundoNum").value;
+
+                var resultado = document.getElementById("resultado");
+
+                resultado.value = primNum + segNum;
+                
+            };
+
+            function subtrairValores() { 
+                var primNum = +document.getElementById("primeiroNum").value;
+                var segNum = +document.getElementById("segundoNum").value;
+
+                var resultado = document.getElementById("resultado");
+
+                resultado.value = primNum - segNum;
+            };
+
+            function multiplicarValores() { 
+                var primNum = +document.getElementById("primeiroNum").value;
+                var segNum = +document.getElementById("segundoNum").value;
+
+                var resultado = document.getElementById("resultado");
+
+                resultado.value = primNum * segNum;
+            };  
+
+            function dividirValores() { 
+                var primNum = +document.getElementById("primeiroNum").value;
+                var segNum = +document.getElementById("segundoNum").value;
+
+                var resultado = document.getElementById("resultado");
+
+                resultado.value = primNum / segNum;
+            };
+
+        </script>
+
+    </body>
+</html>    
