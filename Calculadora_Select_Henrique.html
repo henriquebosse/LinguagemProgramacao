@@ -8,15 +8,15 @@
         body {
             background-color: cadetblue;
             color: white;
-            font: 12pt Arial;
+            font: 12pt Arial; 
         }
-       
+        
     </style>    
 </head>
     <body>    
         
         <fieldset>
-            <legend>Calculadora</legend>
+            <legend>Calculadora Com Select Option</legend>
                                 
             <div>
                 <label for="primeiroNum">Insira o Primeiro Valor:</label> 
@@ -28,28 +28,32 @@
             </div>                    
             </br>
             <div>
-                <button onclick="CalcularValores('somar')">Somar (+)</button>
-                <button onclick="CalcularValores('subtrair')">Subtrair (-)</button>
-                <button onclick="CalcularValores('multiplicar')">Multiplicar (x)</button>
-                <button onclick="CalcularValores('dividir')">Dividir (/)</button>
-                <button onclick="CalcularValores('porcentagem')">Porcentagem (%)</button>
+                <select name="CalcularValores" onchange="javascript:CalcularValores(this.value);">
+                    <option value='somar'>Somar (+)</option>
+                    <option value='subtrair'>Subtrair (-)</option>
+                    <option value='multiplicar'>Multiplicar (x)>/</option>
+                    <option value='dividir'>Dividir (/)</option>
+                    <option value='porcentagem'>Porcentagem (%)</option>
+                </select>                                
             </div>                   
             </br>
             <div> 
                 <label for="resultado">Resultado:</label> <input id="resultado" type="number" name="resultado">
             </div>                    
         </fieldset>
-     
-        <script>
+        
+        <script type="text/javascript">
+
             function CalcularValores(operacao) {
+                
                 var primNum = +document.getElementById("primeiroNum").value;
                 var segNum = +document.getElementById("segundoNum").value;
                 var resultado = document.getElementById("resultado");
-
+                
                 switch(operacao) {
                 case 'somar':                    
                     resultado.value = primNum + segNum;
-                    break; 
+                    break;
                 case 'subtrair':
                     resultado.value = primNum - segNum;
                     break;
@@ -63,10 +67,10 @@
                     resultado.value = primNum * (segNum / 100);
                 break;
                 default:
-                    // code block
+                    "Opção em Desenvolvimento";
                 }
             }
-       
+        
         </script>
 
     </body>
